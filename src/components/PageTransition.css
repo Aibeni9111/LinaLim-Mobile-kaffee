@@ -1,0 +1,17 @@
+.page-transition {
+  position: relative;
+}
+
+.page-transition__bean {
+  position: fixed;
+  top: 40%;
+  width: 64px;
+  height: auto;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.page-transition__bean--2 {
+  top: 58%;
+  width: 90px;
+}

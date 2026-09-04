@@ -1,0 +1,62 @@
+.steam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28%;
+  height: 55%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.steam__rise {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  animation: steam-rise linear both;
+  animation-timeline: scroll(root);
+}
+
+.steam__wobble {
+  display: block;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.55),
+    transparent 70%
+  );
+  filter: blur(14px);
+  animation: steam-wobble 4s ease-in-out infinite;
+}
+
+@keyframes steam-rise {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.55;
+  }
+  to {
+    transform: translateY(-260px);
+    opacity: 0;
+  }
+}
+
+@keyframes steam-wobble {
+  0%,
+  100% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(14px) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steam__rise,
+  .steam__wobble {
+    animation: none;
+    opacity: 0.25;
+  }
+}

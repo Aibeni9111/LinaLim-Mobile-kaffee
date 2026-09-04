@@ -1,0 +1,92 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/fraunces/400.css';
+@import '@fontsource/fraunces/600.css';
+
+:root {
+  --color-black: #17110c;
+  --color-charcoal: #241a13;
+  --color-cream: #f8f2e6;
+  --color-white: #ffffff;
+  --color-gold: #8b6535;
+  --color-gold-light: #dcb97e;
+  --color-espresso: #2b1710;
+  --color-terracotta: #a8562f;
+  --color-glow: 214, 158, 90;
+
+  --text-body: var(--color-charcoal);
+  --text-muted: #5c574e;
+  --bg-page: var(--color-cream);
+
+  --font-heading: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --container-width: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--bg-page);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+  color: var(--color-black);
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.glow {
+  position: absolute;
+  width: 640px;
+  height: 640px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--color-glow), 0.35), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 720px) {
+  .glow {
+    width: 380px;
+    height: 380px;
+  }
+}

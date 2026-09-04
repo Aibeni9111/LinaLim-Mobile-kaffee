@@ -1,0 +1,48 @@
+.coffee-beans {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.coffee-beans__spin {
+  position: absolute;
+  display: block;
+  animation: bean-spin linear both;
+  animation-timeline: scroll(root);
+}
+
+.coffee-beans__bean {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.45;
+  animation: bean-drift ease-in-out infinite;
+}
+
+@keyframes bean-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bean-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-22px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coffee-beans__spin,
+  .coffee-beans__bean {
+    animation: none;
+  }
+}

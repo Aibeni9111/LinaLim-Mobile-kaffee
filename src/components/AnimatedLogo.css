@@ -1,0 +1,39 @@
+.animated-logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.animated-logo__icon {
+  width: clamp(96px, 13vw, 148px);
+  height: auto;
+}
+
+.animated-logo__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.animated-logo__name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.animated-logo__tagline {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-logo__icon,
+  .animated-logo__text {
+    transition: none;
+  }
+}

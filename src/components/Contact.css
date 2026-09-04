@@ -1,0 +1,116 @@
+.contact {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-cream);
+  padding: 120px 0;
+}
+
+.contact__glow {
+  bottom: -240px;
+  left: -160px;
+}
+
+.contact__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+}
+
+.contact__eyebrow {
+  display: block;
+  color: var(--color-gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.contact__title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.contact__text {
+  margin-top: 20px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 32em;
+}
+
+.contact__whatsapp {
+  display: inline-block;
+  margin-top: 32px;
+  color: var(--color-black);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-gold);
+  padding-bottom: 2px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.contact__field input,
+.contact__field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 1px solid rgba(17, 17, 17, 0.15);
+  border-radius: 4px;
+  background: var(--color-white);
+  color: var(--text-body);
+  resize: vertical;
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(182, 138, 78, 0.15);
+}
+
+.contact__submit {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 16px 32px;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.contact__submit:hover {
+  background: var(--color-gold);
+  color: var(--color-black);
+}
+
+@media (max-width: 800px) {
+  .contact {
+    padding: 72px 0;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

@@ -1,0 +1,124 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: var(--color-cream);
+  transition: box-shadow 0.3s ease;
+}
+
+.header--scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.header__brand {
+  display: flex;
+  text-decoration: none;
+}
+
+.header__logo {
+  height: 108px;
+  width: auto;
+}
+
+.header__nav {
+  display: flex;
+  gap: 32px;
+}
+
+.header__link {
+  color: var(--text-body);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.header__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: width 0.25s ease;
+}
+
+.header__link:hover::after {
+  width: 100%;
+}
+
+.header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__toggle span {
+  display: block;
+  height: 2px;
+  background: var(--color-black);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.header__toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 720px) {
+  .header__toggle {
+    display: flex;
+  }
+
+  .header__nav {
+    position: fixed;
+    top: var(--header-height, 84px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--color-cream);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .header__nav.is-open {
+    max-height: 400px;
+  }
+
+  .header__nav .header__link {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  }
+
+  .header__nav .header__link::after {
+    display: none;
+  }
+}

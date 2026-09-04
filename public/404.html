@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LinaLim Mobile Kaffee</title>
+    <script type="text/javascript">
+      // GitHub Pages не умеет отдавать index.html на все пути (SPA-роутинг).
+      // Этот скрипт кодирует запрошенный путь в query-строку и редиректит
+      // на корень — index.html потом раскодирует его обратно.
+      var pathSegmentsToKeep = 1 // сохраняем '/LinaLim-Mobile-kaffee'
+
+      var l = window.location
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname
+            .split('/')
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join('/') +
+          '/?/' +
+          l.pathname
+            .slice(1)
+            .split('/')
+            .slice(pathSegmentsToKeep)
+            .join('/')
+            .replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash,
+      )
+    </script>
+  </head>
+  <body></body>
+</html>

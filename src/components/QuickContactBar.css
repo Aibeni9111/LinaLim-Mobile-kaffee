@@ -1,0 +1,54 @@
+.quick-contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  display: flex;
+  transform: translateY(-100%);
+  transition: transform 0.35s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.quick-contact.is-visible {
+  transform: translateY(var(--header-height, 84px));
+}
+
+.quick-contact__item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-white);
+  background: var(--color-espresso);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color 0.2s ease;
+}
+
+.quick-contact__item:last-child {
+  border-right: none;
+}
+
+.quick-contact__item:hover {
+  background: var(--color-black);
+}
+
+.quick-contact__item--whatsapp {
+  background: #1f8a4c;
+}
+
+.quick-contact__item--whatsapp:hover {
+  background: #1a7440;
+}
+
+@media (max-width: 640px) {
+  .quick-contact__item {
+    font-size: 0.75rem;
+    padding: 10px 4px;
+  }
+}
